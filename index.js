@@ -11,8 +11,9 @@ import {
 const app = express();
 app.use(cors());
 app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
 
-app.get("/movies/:movieId", getOneMovie);
+app.get("/movies", getOneMovie);
 
 app.post("/usersavedmovies", addOneMovie);
 app.patch("/usersavedmovies/:movieId", updateOneMovie);
